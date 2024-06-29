@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url(pixel-game-background-pixel-art-game-background-tree-ground-grass-sky-clouds-99785784.webp) repeat center fixed;
+            background-size: contain;
+        }
+
+        button {
+            width: 100px;
+            height: 100px;
+            background-color: cyan;
+        }
+
+        .cell-0-0,
+        .cell-0-1,
+        .cell-0-2,
+        .cell-1-0,
+        .cell-1-1,
+        .cell-1-2,
+        .cell-2-0,
+        .cell-2-1,
+        .cell-2-2 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border: 10px dotted white;
+        }
+
+        .cell-0-0 {
+            left: 38.5%;
+            top: 28%;
+            border-left: transparent;
+            border-top: transparent;
+            border-bottom: transparent;
+        }
+
+        .cell-0-1 {
+            left: 45.5%;
+            top: 28%;
+            border-top: transparent;
+            border-bottom: transparent;
+            border-right: transparent;
+        }
+
+        .cell-0-2 {
+            left: 52.5%;
+            top: 28%;
+            border-top: transparent;
+            border-right: transparent;
+            border-bottom: transparent;
+        }
+
+        .cell-1-0 {
+            left: 38.5%;
+            top: 44%;
+            border-left: transparent;
+            border-bottom: transparent;
+        }
+
+        .cell-1-1 {
+            left: 45.5%;
+            top: 44%;
+            border-bottom: transparent;
+        }
+
+        .cell-1-2 {
+            left: 52.5%;
+            top: 44%;
+            border-right: transparent;
+            border-bottom: transparent;
+        }
+
+        .cell-2-0 {
+            left: 38.5%;
+            top: 60%;
+            border-left: transparent;
+            border-bottom: transparent;
+        }
+
+        .cell-2-1 {
+            left: 45.5%;
+            top: 60%;
+            border-bottom: transparent;
+        }
+
+        .cell-2-2 {
+            left: 52.5%;
+            top: 60%;
+            border-right: transparent;
+            border-bottom: transparent;
+        }
+
+        h1 {
+            font-family: 'Black Ops One', sans-serif;
+            font-size: 45px;
+            text-align: center;
+            margin-top: 100px;
+            width: 300px;
+            height: 90px;
+            padding: 0px;
+            margin-left: 37.5%;
+            background: url(brown-concrete-wall-with-scratches-vector_53876-143109.avif) no-repeat center center;
+            background-size: cover;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .upper {
+            position: absolute;
+            top: 140px;
+            left: 424px;
+            width: 380px;
+            border-width: 20px;
+            border: 15px solid transparent;
+            background-color: cyan;
+            border-image: url(360_F_489114224_rNW6VL5GjJucMpXuz6XlYkhcSHPXYHa3.webp) 30 round;
+            height: 300px;
+            z-index: -1;
+        }
+
+        .value1,
+        .value2 {
+            border: 15px solid transparent;
+            border-image: url(images/5.jpeg) 30 round;
+            /* Changed backslash to forward slash */
+        }
+
+        .value1 {
+            position: absolute;
+            left: 430px;
+            top: 0px;
+            width: 0%;
+            height: 140px;
+            transform: scaleX(0.5);
+            z-index: -1;
+            border-radius: 100%;
+        }
+
+        .value2 {
+            position: absolute;
+            left: 790px;
+            top: 40px;
+            width: 0px;
+            transform: scaleX(0.5);
+            width: 0%;
+            height: 140px;
+            top: 0px;
+            z-index: -1;
+        }
+
+        .start,
+        .start1,
+        .start2 {
+
+            width: 150px;
+            height: 60px;
+            background: rgb(233, 233, 98);
+            border-radius: 40px;
+            border: 8px dotted rgb(239, 96, 111);
+            font-size: 20px;
+            font-family: "Black Ops One", sans-serif;
+            z-index: 2;
+            font-size: 30px;
+        }
+
+        .value1,
+        .value2 {
+            border: 15px solid transparent;
+            border-image: url(images\ \(5\).jpeg) 30 round;
+        }
+
+        .value1 {
+            position: absolute;
+            left: 430px;
+            top: 0px;
+            width: 0%;
+            height: 140px;
+            transform: scaleX(0.5);
+            z-index: -1;
+            border-radius: 100%;
+        }
+
+        .value2 {
+            position: absolute;
+            left: 790px;
+            top: 40px;
+            width: 0px;
+            transform: scaleX(0.5);
+            width: 0%;
+            height: 140px;
+            top: 0px;
+            z-index: -1;
+        }
+
+        .start2 {
+            position: absolute;
+            left: 564px;
+            bottom: 180px;
+            width: 120px;
+            height: 50px;
+            font-size: 14px;
+        }
+
+        .start:hover,
+        .start1:hover,
+        .start2:hover {
+            box-shadow: 2px 2px 20px rgb(211, 7, 27);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="value1"></div>
+    <div class="value2"></div>
+
+    <h1>Tic Tac Toe</h1>
+
+    <div class="upper"></div>
+    <button class="cell-0-0" onclick="playerMove(0)"></button>
+    <button class="cell-0-1" onclick="playerMove(1)"></button>
+    <button class="cell-0-2" onclick="playerMove(2)"></button>
+    <button class="cell-1-0" onclick="playerMove(3)"></button>
+    <button class="cell-1-1" onclick="playerMove(4)"></button>
+    <button class="cell-1-2" onclick="playerMove(5)"></button>
+    <button class="cell-2-0" onclick="playerMove(6)"></button>
+    <button class="cell-2-1" onclick="playerMove(7)"></button>
+    <button class="cell-2-2" onclick="playerMove(8)"></button>
+    <button class="start2" onclick="renew()">Multi Player</button>
+
+    <script>
+        let num = document.querySelector('.start2');
+        num.style.display = 'none';
+        let board = ['', '', '', '', '', '', '', '', ''];
+        let currentPlayer = 'X';
+        let count = 0;
+
+        function isGameOver() {
+            if (checkWinner(board, 'X')) {
+                return 'X';
+            } else if (checkWinner(board, 'O')) {
+                return 'O';
+            }
+
+            if (!board.includes('')) {
+                return 'tie';
+            }
+
+            return false;
+        }
+
+        function checkWinner(board, player) {
+            const winConditions = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
+                [0, 3, 6], [1, 4, 7], [2, 5, 8], // columns
+                [0, 4, 8], [2, 4, 6] // diagonals
+            ];
+
+            return winConditions.some((condition) => {
+                return condition.every((index) => {
+                    return board[index] === player;
+                });
+            });
+        }
+
+        function playerMove(index) {
+            if (board[index] === '' && currentPlayer === 'X') {
+                board[index] = 'X';
+                let button = document.getElementsByClassName('cell-' + Math.floor(index / 3) + '-' + index % 3)[0];
+                document.getElementsByClassName('cell-' + Math.floor(index / 3) + '-' + index % 3)[0].innerHTML = 'X';
+                button.style.fontFamily = "Luckiest Guy, cursive";
+                button.style.color = 'yellow';
+                button.style.fontSize = '70px';
+                currentPlayer = 'O';
+
+                let result = isGameOver();
+                if (result) {
+                    announceResult(result);
+                } else {
+                    setTimeout(computerMove, 500);
+                }
+            }
+        }
+
+        function computerMove() {
+            let index;
+            do {
+                index = Math.floor(Math.random() * 9);
+            } while (board[index] !== '');
+
+            board[index] = 'O';
+            let button = document.getElementsByClassName('cell-' + Math.floor(index / 3) + '-' + index % 3)[0];
+            document.getElementsByClassName('cell-' + Math.floor(index / 3) + '-' + index % 3)[0].innerHTML = 'O';
+            button.style.fontFamily = "Luckiest Guy, cursive";
+            button.style.color = 'green';
+            button.style.fontSize = '70px';
+            currentPlayer = 'X';
+
+            let result = isGameOver();
+            if (result) {
+                announceResult(result);
+            }
+        }
+
+        function announceResult(result) {
+            if (result === 'tie') {
+                let message = document.createElement('h1');
+                message.textContent = 'It is a Draw';
+                message.style.fontFamily = "'Black Ops One', sans-serif";
+                message.style.fontSize = '40px';
+                message.style.textAlign = 'center';
+                message.style.marginTop = '20px';
+                document.body.appendChild(message);
+            } else {
+                let message = document.createElement('h1');
+                message.textContent = 'The winner is ' + `${result}`;
+                message.style.fontFamily = "'Black Ops One', sans-serif";
+                message.style.fontSize = '40px';
+                message.style.textAlign = 'center';
+                message.style.marginTop = '20px';
+                document.body.appendChild(message);
+            }
+
+            let buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.style.display = 'none';
+            });
+            let num = document.querySelector('.start2');
+            num.style.display = 'block';
+            num.textContent = 'Restart';
+            num.addEventListener('click', function () {
+                window.open('pretic.html', '_self');
+            });
+        }
+    </script>
+</body>
+
+</html>

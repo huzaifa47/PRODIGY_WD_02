@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: url(pixel-game-background-pixel-art-game-background-tree-ground-grass-sky-clouds-99785784.webp) repeat center fixed;
+            background-size: contain;
+        }
+
+        button {
+            width: 100px;
+            height: 100px;
+            background-color: cyan;
+        }
+
+        .first,
+        .second,
+        .third,
+        .four,
+        .five,
+        .sixth,
+        .seven,
+        .eight,
+        .nine {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border: 10px dotted white;
+        }
+
+        .first {
+            left: 38.5%;
+            top: 28%;
+            border-left: transparent;
+            border-top: transparent;
+            border-bottom: transparent;
+        }
+
+        .second {
+            left: 45.5%;
+            top: 28%;
+            border-top: transparent;
+            border-bottom: transparent;
+            border-right: transparent;
+        }
+
+        .third {
+            left: 52.5%;
+            top: 28%;
+            border-top: transparent;
+            border-right: transparent;
+            border-bottom: transparent;
+        }
+
+        .four {
+            left: 38.5%;
+            top: 44%;
+            border-left: transparent;
+            border-bottom: transparent;
+        }
+
+        .five {
+            left: 45.5%;
+            top: 44%;
+            border-bottom: transparent;
+        }
+
+        .sixth {
+            left: 52.5%;
+            top: 44%;
+            border-right: transparent;
+            border-bottom: transparent;
+        }
+
+        .seven {
+            left: 38.5%;
+            top: 60%;
+            border-left: transparent;
+            border-bottom: transparent;
+        }
+
+        .eight {
+            left: 45.5%;
+            top: 60%;
+            border-bottom: transparent;
+        }
+
+        .nine {
+            left: 52.5%;
+            top: 60%;
+            border-right: transparent;
+            border-bottom: transparent;
+        }
+
+        h1 {
+            font-family: 'Black Ops One', sans-serif;
+            font-size: 45px;
+            text-align: center;
+            margin-top: 100px;
+            width: 300px;
+            height: 90px;
+            padding: 0px;
+            margin-left: 37.5%;
+            background: url(brown-concrete-wall-with-scratches-vector_53876-143109.avif) no-repeat center center;
+            background-size: cover;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .upper {
+            position: absolute;
+            top: 140px;
+            left: 424px;
+            width: 380px;
+            border-width: 20px;
+            border: 15px solid transparent;
+            background-color: cyan;
+            border-image: url(360_F_489114224_rNW6VL5GjJucMpXuz6XlYkhcSHPXYHa3.webp) 30 round;
+            height: 300px;
+            z-index: -1;
+        }
+
+        .value1,
+        .value2 {
+            border: 15px solid transparent;
+            border-image: url(images\ \(5\).jpeg) 30 round;
+        }
+
+        .value1 {
+            position: absolute;
+            left: 430px;
+            top: 0px;
+            width: 0%;
+            height: 140px;
+            transform: scaleX(0.5);
+            z-index: -1;
+            border-radius: 100%;
+        }
+
+        .value2 {
+            position: absolute;
+            left: 790px;
+            top: 40px;
+            width: 0px;
+            transform: scaleX(0.5);
+            width: 0%;
+            height: 140px;
+            top: 0px;
+            z-index: -1;
+        }
+
+        .start,
+        .start1,
+        .start2 {
+
+            width: 150px;
+            height: 60px;
+            background: rgb(233, 233, 98);
+            border-radius: 40px;
+            border: 8px dotted rgb(239, 96, 111);
+            font-size: 20px;
+            font-family: "Black Ops One", sans-serif;
+            z-index: 2;
+            font-size: 30px;
+        }
+
+        .start2 {
+            position: absolute;
+            left: 564px;
+            bottom: 180px;
+            width: 120px;
+            height: 50px;
+            font-size: 14px;
+        }
+
+        .start:hover,
+        .start1:hover,
+        .start2:hover {
+            box-shadow: 2px 2px 20px rgb(211, 7, 27);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="value1"></div>
+    <div class="value2"></div>
+
+    <h1>Tick Tak Toe</h1>
+
+    <div class="upper"></div>
+    <button class="first" onclick="Start(this,0,0)"></button>
+    <button class="second" onclick="Start(this,0,1)"></button>
+    <button class="third" onclick="Start(this,0,2)"></button>
+    <button class="four" onclick="Start(this,1,0)"></button>
+    <button class="five" onclick="Start(this,1,1)"></button>
+    <button class="sixth" onclick="Start(this,1,2)"></button>
+    <button class="seven" onclick="Start(this,2,0)"></button>
+    <button class="eight" onclick="Start(this,2,1)"></button>
+    <button class="nine" onclick="Start(this,2,2)"></button>
+    <button class="start2" onclick="renew()">Multi Player</button>
+
+    <script>
+        let num = document.querySelector('.start2');
+        num.style.display = 'none';
+        let count = 0;
+        let board = [
+            ['', '', ''],
+            ['', '', ''],
+            ['', '', '']
+        ];
+
+        function Start(button, row, column) {
+            if (board[row][column] !== '') {
+                return;
+            }
+
+            count++;
+            if (count % 2 === 1) {
+                button.innerHTML = 'X';
+                button.style.fontFamily = "Luckiest Guy, cursive";
+                button.style.color = 'yellow';
+                button.style.fontSize = '70px';
+                board[row][column] = 'X';
+            } else {
+                button.innerHTML = 'O';
+                button.style.fontFamily = "Luckiest Guy, cursive";
+                button.style.color = 'green';
+                button.style.fontSize = '70px';
+                board[row][column] = 'O';
+            }
+
+            let winner = check();
+
+            function check() {
+                // Check rows
+                for (let i = 0; i < 3; i++) {
+                    if (board[i][0] === board[i][1] && board[i][1] === board[i][2] && board[i][0] !== '') {
+                        displayWinner(board[i][0]);
+                        return board[i][0];
+                    }
+                }
+
+                // Check columns
+                for (let i = 0; i < 3; i++) {
+                    if (board[0][i] === board[1][i] && board[1][i] === board[2][i] && board[0][i] !== '') {
+                        displayWinner(board[0][i]);
+                        return board[0][i];
+                    }
+                }
+
+                // Check diagonals
+                if (board[1][1] !== '' && ((board[0][0] === board[1][1] && board[1][1] === board[2][2]) || (board[0][2] === board[1][1] && board[1][1] === board[2][0]))) {
+                    displayWinner(board[1][1]);
+                    return board[1][1];
+                }
+
+                // Check for tie
+                if (count === 9) {
+                    displayWinner('Draw');
+                    return 'Draw';
+                }
+
+                return null;
+            }
+
+            function displayWinner(winnerSymbol) {
+                if (winnerSymbol !== 'Draw') {
+                    let message = document.createElement('h1');
+                    message.textContent = 'It is a Draw';
+                    message.style.fontFamily = "'Black Ops One', sans-serif";
+                    message.style.fontSize = '40px';
+                    message.style.textAlign = 'center';
+                    message.style.marginTop = '20px';
+                    document.body.appendChild(message);
+                }
+                else {
+                    let message = document.createElement('h1');
+                    message.textContent = 'The winner is ' + winnerSymbol;
+                    message.style.fontFamily = "'Black Ops One', sans-serif";
+                    message.style.fontSize = '40px';
+                    message.style.textAlign = 'center';
+                    message.style.marginTop = '20px';
+                    document.body.appendChild(message);
+                    let num = document.querySelector('.start2');
+                    num.style.display = 'visible';
+
+                }
+
+                let buttons = document.querySelectorAll('button');
+                buttons.forEach(button => {
+                    button.style.display = 'none';
+                });
+                let num = document.querySelector('.start2');
+                num.style.display = 'block';
+                num.textContent = 'Restart';
+                num.addEventListener('click', function () {
+                    window.open('pretic.html', '_self');
+                });
+
+            }
+        }
+    </script>
+</body>
+
+</html>
